@@ -79,7 +79,9 @@ $config['environment'] = getenv('APP_ENV') ?: 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'http://localhost/lab2/public/';
+$config['base_url'] 				= (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'onrender.com') !== false)
+    ? 'https://opredo-jastine.onrender.com/'
+    : 'http://localhost/lab2/public/';
 
 /*
 |--------------------------------------------------------------------------
